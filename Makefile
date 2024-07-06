@@ -7,7 +7,7 @@ help: # Show help for each of the Makefile recipes.
 
 install-dependencies: # Install dependencies
 	poetry export --without-hashes --format=requirements.txt > requirements.txt
-	pip install -r requirements.txt -v
+	pip install -r requirements.txt
 
 start-local: # Start local server
 ifdef port	

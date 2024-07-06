@@ -9,7 +9,6 @@ __pycache__/
 
 # Poetry
 .poetry/
-poetry.lock
 
 # Ruff
 .ruff_cache/
