@@ -1,0 +1,37 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.venv/
+.pytest_cache/
+.coverage
+
+# Poetry
+.poetry/
+poetry.lock
+
+# Ruff
+.ruff_cache/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# MacOs
+.DS_Store
+
+# Infra
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+.terraform.lock.hcl
+build/

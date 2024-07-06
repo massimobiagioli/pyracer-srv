@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>PyRacer</title>
+</head>
+<body>
+    <h1>PyRacer</h1>
+
+    <div>
+        <div><span>Change Program</span></div>
+        <div>
+            <button onclick="changeProgram('normal')">Normal</button>
+            <button onclick="changeProgram('reverse')">Reverse</button>
+            <button onclick="changeProgram('all')">All</button>
+        </div>
+    </div>
+
+    <script>
+        function changeProgram(program) {
+            fetch('/leds', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "program_type": program })
+            });
+        }
+    </script>
+</body>
+</html>
