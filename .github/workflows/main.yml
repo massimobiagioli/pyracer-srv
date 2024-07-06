@@ -16,12 +16,11 @@ jobs:
       run: python3 -m venv .venv && source .venv/bin/activate
 
     - name: Install dependencies
-      run: make install
-      env:
-        PYTHON_KEYRING_BACKEND: keyring.backends.fail.Keyring
+      run: make install-dependencies
 
     - name: Run Lint
       run: make lint
 
     - name: Run Test
       run: make test
+      
