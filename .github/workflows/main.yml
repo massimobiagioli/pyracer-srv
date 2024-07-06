@@ -1,1 +1,30 @@
+name: pyracer-srv deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create Virtual Environment
+      run: python3 -m venv .venv && source .venv/bin/activate
+    
+    - name: Install poetry
+      run: pip install poetry
+
+    - name: Install dependencies
+      run: poetry install
+
+    - name: Run Lint
+      run: make lint
+
+    - name: Run Test
+      run: make test
+
 
