@@ -25,16 +25,16 @@ else
 endif
 
 coverage: test # Run tests with coverage
-	poetry run pytest --cov-report term-missing --cov=app
+	python -m pytest --cov-report term-missing --cov=app
 
 lint: # Run linter
-	poetry run ruff check .
+	python -m ruff check .
 
 lint-fix: # Run linter with fix
-	poetry run ruff check --fix .
+	python -m ruff check --fix .
 
 format: # Run formatter
-	poetry run ruff format .
+	python -m ruff format .
 
 pre-commit-install: # Install pre-commit hooks
 	pre-commit install
