@@ -14,9 +14,6 @@ jobs:
 
     - name: Create Virtual Environment
       run: python3 -m venv .venv && source .venv/bin/activate
-    
-    - name: Install poetry
-      run: pip install poetry
 
     - name: Install dependencies
       run: poetry install
@@ -26,5 +23,3 @@ jobs:
 
     - name: Run Test
       run: make test
-
-
