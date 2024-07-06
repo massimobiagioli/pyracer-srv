@@ -17,6 +17,9 @@ jobs:
 
     - name: Install dependencies
       run: make install-dependencies
+      env:
+        PYTHON_KEYRING_BACKEND: keyring.backends.fail.Keyring
+
 
     - name: Run Lint
       run: make lint
