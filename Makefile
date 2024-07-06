@@ -6,7 +6,9 @@ help: # Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
 install-dependencies: # Install dependencies
-	poetry install --no-root -v
+	poetry export --without-hashes --format=requirements.txt > requirements.txt
+	python -m pip install --upgrade pip
+	python -m pip install -r requirements.txt
 
 start-local: # Start local server
 ifdef port	
