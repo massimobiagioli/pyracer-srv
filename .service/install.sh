@@ -17,7 +17,9 @@ if systemctl is-active --quiet $SERVICE_NAME; then
 fi
 
 # Install the service
-if [ ! systemctl list-unit-files | grep -qw $SERVICE_NAME ]; then
+if systemctl list-unit-files | grep -qw $SERVICE_NAME; then
+	echo "Service $SERVICE_NAME is already installed."
+else
 	if [ ! -f "$TEMPLATE_PATH" ]; then
 		echo "ERROR! $TEMPLATE_PATH does not exist"
 		exit 1
