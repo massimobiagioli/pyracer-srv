@@ -10,10 +10,6 @@ echo "Copy all files to the app folder."
 mkdir -p $APP_PATH
 rsync -a ../ $APP_PATH
 
-# Activate the virtual environment
-echo "Activate the virtual environment."
-. $APP_PATH/.venv/bin/activate
-
 # Stop the service
 if systemctl is-active --quiet $SERVICE_NAME; then
 	echo "Stop service $SERVICE_NAME"
