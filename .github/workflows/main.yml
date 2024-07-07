@@ -19,6 +19,8 @@ jobs:
       run: |
         . .venv/bin/activate
         make install-dependencies
+      env:
+        PYTHON_KEYRING_BACKEND: keyring.backends.fail.Keyring
     
     - name: Run Lint
       run: |
