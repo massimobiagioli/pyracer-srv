@@ -1,0 +1,12 @@
+[Unit]
+Description=PyracerServer
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/massimo/apps/pyracer-srv
+ExecStart=/usr/bin/make start-local port=4000
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

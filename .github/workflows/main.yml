@@ -33,4 +33,9 @@ jobs:
       run: |
         . .venv/bin/activate
         python -m pytest -vv
+
+    - name: Install service
+      run: |
+        . .venv/bin/activate
+        bash ./service/install.sh
       

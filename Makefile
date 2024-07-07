@@ -7,9 +7,9 @@ help: # Show help for each of the Makefile recipes.
 
 start-local: # Start local server
 ifdef port	
-	uvicorn app.main:app --port $(port) --reload
+	uvicorn app.main:app --host=0.0.0.0 --port $(port) --reload
 else
-	uvicorn app.main:app --reload
+	uvicorn app.main:app --host=0.0.0.0 --reload
 endif
 
 test: # Run tests
