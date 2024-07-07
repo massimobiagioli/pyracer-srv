@@ -8,7 +8,8 @@ help: # Show help for each of the Makefile recipes.
 install-dependencies: # Install dependencies
 	python -m pip install --upgrade pip
 	python -m pip install poetry
-	python -m poetry install
+	poetry export --without-hashes --with dev --format=requirements.txt > requirements.txt
+	python -m pip install -r requirements.txt
 
 start-local: # Start local server
 ifdef port	
