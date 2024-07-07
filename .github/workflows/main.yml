@@ -36,7 +36,6 @@ jobs:
 
     - name: Install service
       run: |
-        . .venv/bin/activate
         cd .service 
         bash ./install.sh
       
