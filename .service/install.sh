@@ -8,7 +8,7 @@ APP_PATH="/home/massimo/apps/pyracer-srv"
 # Copy all files to the app folder
 echo "Copy all files to the app folder."
 mkdir -p $APP_PATH
-cp -r ../* $APP_PATH
+rsync -a ../ $APP_PATH
 
 # Activate the virtual environment
 echo "Activate the virtual environment."
