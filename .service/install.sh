@@ -34,6 +34,10 @@ if [ ! systemctl list-unit-files | grep -qw $SERVICE_NAME ]; then
 	sudo systemctl enable $SERVICE_NAME
 fi
 
+# Daemon reload
+echo "Daemon reload"
+sudo systemctl daemon-reload
+
 # Start the service
 echo "Start service $SERVICE_NAME"
 sudo systemctl start $SERVICE_NAME
